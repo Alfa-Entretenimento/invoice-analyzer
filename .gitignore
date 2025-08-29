@@ -55,6 +55,6 @@ htmlcov/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# PDF test files (optional - uncomment if you don't want to track PDFs)
-# *.pdf
-# notas/
+# PDF files (sensitive data)
+*.pdf
+notas/
