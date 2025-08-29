@@ -1,0 +1,147 @@
+{
+  "total_notas": 13,
+  "estados": {
+    "BA": 1,
+    "SP": 10,
+    "PR": 1,
+    "DESCONHECIDO": 1
+  },
+  "tributadas": 4,
+  "nao_tributadas": 9,
+  "erros": 0,
+  "valor_total": "179125.76",
+  "iss_total": "2451.99",
+  "retencoes_totais": "2852.64",
+  "notas": [
+    {
+      "arquivo": "NF 4 - EBAC - VENC 11.08.pdf",
+      "numero": "4",
+      "estado": "BA",
+      "municipio": "Salvador",
+      "valor_total": "25000.00",
+      "tributado": true,
+      "valor_iss": "750.00",
+      "confianca": 1.0
+    },
+    {
+      "arquivo": "NF 4550 - WEWORK - VENC 11.08.pdf",
+      "numero": "4550",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 10 - BW APOIO - ARTHUR - VENC 01.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "PR",
+      "municipio": "Curitiba",
+      "valor_total": "0",
+      "tributado": true,
+      "valor_iss": "2",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 105 - VESNA - VENC 11.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "40000.00",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 123 - PODPORCO - VENC 29.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 14729 - BE COMPLIANCE - VENC 19.08.pdf",
+      "numero": "14729",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": true,
+      "valor_iss": "1300.00",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 152292 - VEXPENSES - VENC 25.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 165 - VOLTA PRA MARCAR - PJ - VENC 01.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "69888.00",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 17 - M4X - PJ - VENC 01.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "DESCONHECIDO",
+      "municipio": "DESCONHECIDO",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 23072 - BINDS - VENC 20.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "399.99",
+      "tributado": true,
+      "valor_iss": "399.99",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 282 - JNTO AD.EZ - VENC 25.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 381 - BRIO - TORNAK - VENC 20.08.pdf",
+      "numero": "DESCONHECIDO",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "0",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    },
+    {
+      "arquivo": "NF 46 - PLAYHILL - VENC 28.08.pdf",
+      "numero": "46",
+      "estado": "SP",
+      "municipio": "São Paulo",
+      "valor_total": "43837.77",
+      "tributado": false,
+      "valor_iss": "0",
+      "confianca": 0.9
+    }
+  ]
+}

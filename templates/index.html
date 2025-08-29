@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Entertainment - Analisador de Notas Fiscais</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzgiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMzggNTAiPgogIDxwYXRoIGZpbGw9IiNFQkZGMDAiIGQ9Ik0xMzYuMTEyIDI1LjM4NGExLjkgMS45IDAgMCAwLTEuMzM3LjU1IDEuODc1IDEuODc1IDAgMCAwIDAgMi42NTggMS44OTggMS44OTggMCAwIDAgMi42NjguMDAyIDEuODMyIDEuODMyIDAgMCAwIC41NTEtMS4zMzFjMC0uNDk3LS4xOTgtLjk3NC0uNTUxLTEuMzI2YTEuODkzIDEuODkzIDAgMCAwLTEuMzMxLS41NTNabS45NjUgMi44NDNhMS4zNiAxLjM2IDAgMCAxLS45NjUuNCAxLjM3IDEuMzcgMCAwIDEtLjk2Ny0uMzk5IDEuMzU2IDEuMzU2IDAgMCAxIC45NjctMi4zMiAxLjM3NSAxLjM3NSAwIDAgMSAxLjI1OC44NDIgMS4zNTkgMS4zNTkgMCAwIDEtLjI5MyAxLjQ4di0uMDAzWm0tLjEzNy0xLjM0YzAtLjMwOC0uMjI5LS41LS42MzEtLjVoLS45ODV2MS43MDNoLjQ3OHYtLjZoLjQzNWMuMTIgMCAuMTcyLjA1Ny4xNzIuMTg1di40aC40ODdjMC0uMTIgMC0uMjYtLjAyLS40YS4zMy4zMyAwIDAgMC0uMjIxLS4zNTYuNDQ0LjQ0NCAwIDAgMCAuMjg1LS40MzJabS0uNjk1LjI2OGgtLjQ0M3YtLjQzMmguNDM1YS4yMTMuMjEzIDAgMCAxIC4yNi4yOTcuMjE2LjIxNiAwIDAgMS0uMjYuMTAzbC4wMDguMDMyWk02My4xNyAzMi43NzNoLS44MDNjLTIuNzUxIDAtNi40NjMtMS44NjQtNi40NjMtNS40MVY4LjQwNGEuNTc0LjU3NCAwIDAgMC0uNTg0LS41OEg0NC44MTJhLjU4Mi41ODIgMCAwIDAtLjU0LjM1OC41NzQuNTc0IDAgMCAwLS4wNDQuMjIydjE5Ljg2M2MwIDcuODMyIDcuMTQ3IDEyLjkzIDE1LjkzIDEyLjkzaDMuMDEzYS41ODUuNTg1IDAgMCAwIC41ODMtLjU4di03LjI2NWEuNTc4LjU3OCAwIDAgMC0uNTgzLS41OFptMjcuMjQ3LTEwLjQ0OGgtOS4yM2MwLTMuMjM0IDEuNDQ4LTcuNDQgMTIuMjAyLTYuMjQ5YS40MDMuNDAzIDAgMCAwIC40NTgtLjRWOC4zMzJhLjU3OC41NzggMCAwIDAtLjUxOS0uNThjLTUuNjgyLS41ODQtMTEuOTk2LS4zMDQtMTYuNzg2IDIuMDkxLTQuNTM3IDIuMjctNy4wMyA1Ljk5Ny03LjAzIDEwLjkxOXYxOS44NTVhLjU3OC41NzggMCAwIDAgLjU4My41OGgxMC41MDlhLjU4NS41ODUgMCAwIDAgLjU4My0uNTh2LTExLjM0aDUuNjY2YS41OS41OSAwIDAgMCAuNTIzLS4zMjNsMy4yMTgtNi4zNjVhLjE3Ni4xNzYgMCAwIDAtLjE3Ny0uMjY0Wm0tNTQuNjkxIDUuMDU0YTE4LjA3OSAxOC4wNzkgMCAwIDAtNC41MTYtMy41OThjMS42MDguMzI1IDMuMTkuNzY3IDQuNzMzIDEuMzIzdi0uNzY4YzAtNS4yOTctMi42NDYtOS44ODctNy40NTYtMTIuOTMtMy4yMTctMi4wNDMtOC40NzQtNC4wNS0xNi40NjUtMy44NzhhLjUzNi41MzYgMCAwIDAtLjUxNS41MjR2Ny4zMDVhLjUyMi41MjIgMCAwIDAgLjUyNy41MjNjOC43OC4wNDggMTEuNTk1IDMuODk1IDEyLjI4NiA1LjI5YTMyLjM1MiAzMi4zNTIgMCAwIDAtNi45My0uNzY0Yy00LjE5OCAwLTcuNTU2LjUxMi0xMC4yNSAxLjU2OEMyLjUzNSAyMy43NiAwIDI3LjA0NyAwIDMxLjIyYzAgNC4wOTggMi43MzUgNy40IDcuNTA1IDkuMDZhMjUuMjE1IDI1LjIxNSAwIDAgMCA3Ljg5OCAxLjJjNS40NzggMCAxMC4wNTUtMS4yMjggMTMuNDk3LTMuNDc5LjA0LjkxMS4wMTIgMS44MjQtLjA4NCAyLjczYS40LjQgMCAwIDAgLjQwMi40NDRoMTAuNTY1YS41ODcuNTg3IDAgMCAwIC41NDEtLjM2My41NzcuNTc3IDAgMCAwIC4wNDItLjIyNGMtLjA5Mi01LjU5OC0xLjU1Ni05LjgwOC00LjY0NS0xMy4yM2wuMDA0LjAyWm0tMTQuMzkgNC4xMWMtMy44MDggMi4wMzUtOS44MTMgMS40NjctOS44MTMtLjM0OCAwLTEuMjUxIDIuNjA2LTEuODYzIDUuNDc4LTEuODYzIDUuODQ3IDAgOC43MjcgMi4xMzUgOS42NTIgMy4xNDNhNDguNTc2IDQ4LjU3NiAwIDAgMC01LjMxNy0uOTMyWm0xMDguMjM4LTQuMTFhMTguMDkgMTguMDkgMCAwIDAtNC41MTctMy41OTggMzYuOTEgMzYuOTEgMCAwIDEgNC43NDYgMS4zMTV2LS43NjhjMC01LjI5Ny0yLjY1LTkuODg3LTcuNDU2LTEyLjkzLTMuNzI5LTIuMzU4LTEwLjEzNS00LjY3My0yMC4zNTgtMy42MzhhLjU4Ni41ODYgMCAwIDAtLjUyMy41NzJ2Ny4zNTdhLjM4Ni4zODYgMCAwIDAgLjAzNS4xNjcuNDAyLjQwMiAwIDAgMCAuNDIzLjIzM2MxMS45NDUtMS4yNzYgMTUuNDU2IDMuNDk0IDE2LjI0IDUuMDhhMzIuMzE3IDMyLjMxNyAwIDAgMC02LjkyNS0uNzYzYy00LjE5OSAwLTcuNTU3LjUxMi0xMC4yNjQgMS41NjgtNC41OTcgMS43ODctNy4xMjYgNS4wNzMtNy4xMjYgOS4yNDcgMCA0LjA5OCAyLjczNCA3LjQgNy41MDQgOS4wNmEyNS4yMTcgMjUuMjE3IDAgMCAwIDcuODk5IDEuMmM1LjQ3NyAwIDEwLjA1NC0xLjIyOCAxMy40OTctMy40NzkuMDQuOTEuMDEyIDEuODIxLS4wODUgMi43MjdhLjM5Ny4zOTcgMCAwIDAgLjIzNy40MTMuNC40IDAgMCAwIC4xNjUuMDM0aDEwLjU2MmEuNTg4LjU4OCAwIDAgMCAuNTk5LS41NjdjLS4xMDUtNS41OTgtMS41NjUtOS44MDgtNC42NTMtMTMuMjNabS0xNC4zOSA0LjExYy0zLjgwOSAyLjAzNS05LjgxMyAxLjQ2Ny05LjgxMy0uMzQ4IDAtMS4yNTEgMi42MDYtMS44NjMgNS40NzctMS44NjMgNS44NDggMCA4LjcyNCAyLjEzNSA5LjY1MyAzLjE0M2E0OC41OTkgNDguNTk5IDAgMCAwLTUuMzE3LS45MzJaIi8+Cjwvc3ZnPgo=" alt="Alfa Entertainment" style="height: 50px;">
+                    <h1>Analisador de Notas Fiscais</h1>
+                </div>
+                <p class="subtitle">Sistema de Análise de Notas Fiscais de Serviço - Alfa Entertainment</p>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h2>Envie sua Nota Fiscal</h2>
+                    <p>Arraste e solte o arquivo PDF aqui ou clique para selecionar</p>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                    <button class="btn btn-primary" id="selectBtn">
+                        <i class="fas fa-folder-open"></i> Selecionar PDF
+                    </button>
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="fileName"></span>
+                        <button class="btn btn-sm btn-danger" id="removeBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-analyze" id="analyzeBtn" style="display: none;">
+                    <i class="fas fa-search"></i> Analisar Nota Fiscal
+                </button>
+            </div>
+
+            <!-- Estados Suportados -->
+            <div class="supported-states">
+                <h3>Estados Suportados</h3>
+                <div class="states-grid">
+                    <div class="state-badge" data-state="SP">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="SP">
+                        <span>São Paulo</span>
+                    </div>
+                    <div class="state-badge" data-state="RJ">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg" alt="RJ">
+                        <span>Rio de Janeiro</span>
+                    </div>
+                    <div class="state-badge" data-state="MG">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg" alt="MG">
+                        <span>Minas Gerais</span>
+                    </div>
+                    <div class="state-badge" data-state="BA">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Bandeira_da_Bahia.svg" alt="BA">
+                        <span>Bahia</span>
+                    </div>
+                    <div class="state-badge" data-state="PR">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Bandeira_do_Paran%C3%A1.svg" alt="PR">
+                        <span>Paraná</span>
+                    </div>
+                    <div class="state-badge" data-state="RS">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Bandeira_do_Rio_Grande_do_Sul.svg" alt="RS">
+                        <span>Rio Grande do Sul</span>
+                    </div>
+                    <div class="state-badge" data-state="SC">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Bandeira_de_Santa_Catarina.svg" alt="SC">
+                        <span>Santa Catarina</span>
+                    </div>
+                    <div class="state-badge" data-state="DF">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29.svg" alt="DF">
+                        <span>Distrito Federal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analisando nota fiscal em processamento...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2 class="results-title">
+                <i class="fas fa-chart-bar"></i> Resultados da Análise
+            </h2>
+
+            <!-- Status da Tributação -->
+            <div class="tax-status" id="taxStatus">
+                <!-- Preenchido via JavaScript -->
+            </div>
+
+            <div class="results-grid">
+                <!-- Informações Gerais -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Informações Gerais</h3>
+                    </div>
+                    <div class="card-content" id="generalInfo">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Partes Envolvidas -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Partes Envolvidas</h3>
+                    </div>
+                    <div class="card-content" id="partiesInfo">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Valores e Tributação -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Valores e Tributação</h3>
+                    </div>
+                    <div class="card-content" id="taxInfo">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Retenções -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Retenções</h3>
+                    </div>
+                    <div class="card-content" id="retentionInfo">
+                        <!-- Preenchido via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observações -->
+            <div class="observations" id="observations" style="display: none;">
+                <h3><i class="fas fa-sticky-note"></i> Observações</h3>
+                <ul id="observationsList">
+                    <!-- Preenchido via JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="newAnalysisBtn">
+                    <i class="fas fa-redo"></i> Nova Análise
+                </button>
+                <button class="btn btn-secondary" id="exportBtn">
+                    <i class="fas fa-download"></i> Exportar Resultado
+                </button>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Erro na Análise</h3>
+            <p id="errorText"></p>
+            <button class="btn btn-primary" onclick="location.reload()">
+                <i class="fas fa-redo"></i> Tentar Novamente
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Alfa Entertainment S.A. | Sistema de Análise de Notas Fiscais</p>
+        <p class="footer-tech">
+            <i class="fab fa-python"></i> Python
+            <span class="separator">•</span>
+            <i class="fas fa-flask"></i> Flask
+            <span class="separator">•</span>
+            <i class="fas fa-file-pdf"></i> PyPDF2
+        </p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

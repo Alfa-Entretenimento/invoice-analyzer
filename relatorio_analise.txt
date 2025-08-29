@@ -1,0 +1,81 @@
+RELATÓRIO DE ANÁLISE DE NOTAS FISCAIS
+==================================================
+
+Arquivo: NF 4 - EBAC - VENC 11.08.pdf
+Estado: ERRO_LEITURA
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 4550 - WEWORK - VENC 11.08.pdf
+Estado: SP
+Valor Total: R$ 96,616.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 10 - BW APOIO - ARTHUR - VENC 01.08.pdf
+Estado: SP
+Valor Total: R$ 0.00
+Valor ISS: R$ 2.00
+Tributado: SIM
+------------------------------
+Arquivo: NF 105 - VESNA - VENC 11.08.pdf
+Estado: SP
+Valor Total: R$ 40,000.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 123 - PODPORCO - VENC 29.08.pdf
+Estado: SP
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 14729 - BE COMPLIANCE - VENC 19.08.pdf
+Estado: SP
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 152292 - VEXPENSES - VENC 25.08.pdf
+Estado: SP
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 165 - VOLTA PRA MARCAR - PJ - VENC 01.08.pdf
+Estado: SP
+Valor Total: R$ 69,888.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 17 - M4X - PJ - VENC 01.08.pdf
+Estado: DESCONHECIDO
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 23072 - BINDS - VENC 20.08.pdf
+Estado: SP
+Valor Total: R$ 0.00
+Valor ISS: R$ 399.99
+Tributado: SIM
+------------------------------
+Arquivo: NF 282 - JNTO AD.EZ - VENC 25.08.pdf
+Estado: DESCONHECIDO
+Valor Total: R$ 0.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 381 - BRIO - TORNAK - VENC 20.08.pdf
+Estado: SP
+Valor Total: R$ 112,500.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
+Arquivo: NF 46 - PLAYHILL - VENC 28.08.pdf
+Estado: SP
+Valor Total: R$ 7.00
+Valor ISS: R$ 0.00
+Tributado: NÃO
+------------------------------
