@@ -2,3 +2,5 @@ PyPDF2==3.0.1
 pdfplumber==0.10.3
 Flask==3.0.0
 Werkzeug==3.0.1
+gunicorn==21.2.0
+serverless-wsgi==3.0.3
