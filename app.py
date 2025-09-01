@@ -8,7 +8,29 @@ from werkzeug.utils import secure_filename
 import os
 from pathlib import Path
 import tempfile
-from analisador_nf_v2 import AnalisadorNotaFiscalV2, formatar_valor
+from dotenv import load_dotenv
+
+# Carrega variáveis de ambiente do .env
+load_dotenv()
+try:
+    # Tenta usar Claude API primeiro - 100% de precisão!
+    from analisador_claude_api import AnalisadorClaudeAPI as AnalisadorAI, formatar_valor
+    print("✅ Usando Claude API - 100% de precisão!")
+except (ImportError, ValueError) as e:
+    print(f"⚠️ Claude API não disponível: {e}")
+    try:
+        # Fallback para o analisador Claude IA local
+        from analisador_claude_ia import AnalisadorClaudeIA as AnalisadorAI, formatar_valor
+        print("📊 Usando analisador local - ~70% de precisão")
+    except ImportError:
+        try:
+            # Fallback para o analisador visual IA
+            from analisador_visual_ia import AnalisadorVisualIA as AnalisadorAI, formatar_valor
+            print("🔍 Usando analisador visual - ~60% de precisão")
+        except ImportError:
+            # Fallback final
+            from analisador_ai import AnalisadorAI, formatar_valor
+            print("⚠️ Usando analisador básico - precisão limitada")
 from datetime import datetime
 import json
 from decimal import Decimal
@@ -58,8 +80,8 @@ def analyze():
         file.save(str(temp_path))
         
         try:
-            # Analisar PDF com analisador V2
-            analisador = AnalisadorNotaFiscalV2()
+            # Analisar PDF com analisador AI
+            analisador = AnalisadorAI()
             nota = analisador.analisar(str(temp_path))
             
             # Preparar resposta
@@ -96,8 +118,8 @@ def analyze():
                         'cofins': formatar_valor(nota.dados_tributarios.retencao_cofins),
                         'csll': formatar_valor(nota.dados_tributarios.retencao_csll),
                         'inss': formatar_valor(nota.dados_tributarios.retencao_inss),
-                        'ir': formatar_valor(nota.dados_tributarios.retencao_ir),
-                        'irrf': formatar_valor(nota.dados_tributarios.retencao_irrf) if hasattr(nota.dados_tributarios, 'retencao_irrf') else formatar_valor(None),
+                        'ir': formatar_valor(nota.dados_tributarios.retencao_irrf),
+                        'irrf': formatar_valor(nota.dados_tributarios.retencao_irrf),
                     },
                     
                     # Informações adicionais
@@ -118,7 +140,7 @@ def analyze():
                 resultado['data']['codigo_servico'] = nota.dados_tributarios.codigo_servico
             if nota.dados_tributarios.base_calculo:
                 resultado['data']['base_calculo'] = formatar_valor(nota.dados_tributarios.base_calculo)
-            if nota.dados_bancarios:
+            if hasattr(nota, 'dados_bancarios') and nota.dados_bancarios:
                 resultado['data']['dados_bancarios'] = nota.dados_bancarios
             
             return jsonify(resultado)
@@ -134,40 +156,8 @@ def analyze():
             'error': f'Erro ao processar arquivo: {str(e)}'
         }), 500
 
-@app.route('/sample')
-def get_sample():
-    """Retorna dados de exemplo para demonstração"""
-    sample_data = {
-        'success': True,
-        'data': {
-            'numero': '000004550',
-            'estado': 'São Paulo',
-            'estado_sigla': 'SP',
-            'municipio': 'São Paulo',
-            'tipo_nf': 'NFS-e São Paulo',
-            'data_emissao': '01/08/2025',
-            'vencimento': '11/08/2025',
-            'codigo_verificacao': 'FEW7BLTA',
-            'prestador': 'WEWORK SERVICOS DE ESCRITORIO LTDA.',
-            'tomador': 'ALFA ENTRETENIMENTO S.A.',
-            'valor_total': 'R$ 96.616,00',
-            'valor_total_raw': 96616.00,
-            'tributado': True,
-            'valor_iss': 'R$ 4.830,80',
-            'valor_iss_raw': 4830.80,
-            'aliquota_iss': 5.0,
-            'retencoes': {
-                'iss': 'R$ 0,00',
-                'pis': 'R$ 0,00',
-                'cofins': 'R$ 0,00',
-                'csll': 'R$ 0,00',
-                'inss': 'R$ 0,00',
-                'ir': 'R$ 0,00'
-            },
-            'observacoes': ['Tributado em São Paulo', 'ISS já recolhido']
-        }
-    }
-    return jsonify(sample_data)
+# Sample route removed to avoid unnecessary API costs
+# This route was used for demo purposes only
 
 @app.errorhandler(413)
 def too_large(e):

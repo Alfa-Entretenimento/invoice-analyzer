@@ -18,6 +18,25 @@ const exportBtn = document.getElementById('exportBtn');
 // File variable
 let selectedFile = null;
 
+// Loading messages rotation
+const loadingMessages = [
+    'Lendo dados da nota fiscal...',
+    'Extraindo informações tributárias...',
+    'Analisando valores e impostos...',
+    'Processando dados do prestador...',
+    'Verificando dados do tomador...',
+    'Calculando retenções federais...',
+    'Identificando município e estado...',
+    'Validando código de verificação...',
+    'Processando ISS e alíquotas...',
+    'Analisando observações fiscais...',
+    'Compilando relatório final...',
+    'Finalizando análise...'
+];
+
+let messageInterval = null;
+let currentMessageIndex = 0;
+
 // Event Listeners
 selectBtn.addEventListener('click', () => fileInput.click());
 fileInput.addEventListener('change', handleFileSelect);
@@ -105,6 +124,37 @@ function removeFile() {
     selectBtn.style.display = 'inline-block';
 }
 
+function startLoadingMessages() {
+    const loadingText = loading.querySelector('h2');
+    currentMessageIndex = 0;
+    
+    // Show first message immediately
+    loadingText.style.opacity = '0';
+    setTimeout(() => {
+        loadingText.textContent = loadingMessages[currentMessageIndex];
+        loadingText.style.opacity = '1';
+    }, 200);
+    
+    // Rotate messages every 2.5 seconds
+    messageInterval = setInterval(() => {
+        loadingText.style.opacity = '0';
+        
+        setTimeout(() => {
+            currentMessageIndex = (currentMessageIndex + 1) % loadingMessages.length;
+            loadingText.textContent = loadingMessages[currentMessageIndex];
+            loadingText.style.opacity = '1';
+        }, 200);
+    }, 2500);
+}
+
+function stopLoadingMessages() {
+    if (messageInterval) {
+        clearInterval(messageInterval);
+        messageInterval = null;
+    }
+    currentMessageIndex = 0;
+}
+
 function analyzeFile() {
     if (!selectedFile) {
         showError('Por favor, selecione um arquivo PDF');
@@ -114,6 +164,9 @@ function analyzeFile() {
     // Hide upload section and show loading
     document.querySelector('.upload-section').style.display = 'none';
     loading.style.display = 'block';
+    
+    // Start rotating messages
+    startLoadingMessages();
     
     // Create FormData
     const formData = new FormData();
@@ -126,6 +179,7 @@ function analyzeFile() {
     })
     .then(response => response.json())
     .then(data => {
+        stopLoadingMessages();
         loading.style.display = 'none';
         
         if (data.success) {
@@ -135,6 +189,7 @@ function analyzeFile() {
         }
     })
     .catch(error => {
+        stopLoadingMessages();
         loading.style.display = 'none';
         showError('Erro de conexão: ' + error.message);
     });
@@ -335,29 +390,7 @@ Análise gerada em: ${new Date().toLocaleString('pt-BR')}
     }, 2000);
 }
 
-// Sample Data Demo (optional)
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if there's a demo parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('demo') === 'true') {
-        loadSampleData();
-    }
+    // Page initialized
 });
-
-function loadSampleData() {
-    loading.style.display = 'block';
-    document.querySelector('.upload-section').style.display = 'none';
-    
-    fetch('/sample')
-        .then(response => response.json())
-        .then(data => {
-            loading.style.display = 'none';
-            if (data.success) {
-                displayResults(data.data);
-            }
-        })
-        .catch(error => {
-            loading.style.display = 'none';
-            console.error('Error loading sample data:', error);
-        });
-}

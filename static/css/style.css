@@ -229,7 +229,7 @@ body {
     padding: 16px 32px;
 }
 
-/* Supported States */
+/* Supported States Carousel */
 .supported-states {
     margin-top: 40px;
     text-align: center;
@@ -243,10 +243,12 @@ body {
 
 .states-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .state-badge {
@@ -262,6 +264,8 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     cursor: pointer;
+    flex: 0 0 120px;
+    min-width: 120px;
 }
 
 .state-badge:hover {
@@ -280,6 +284,13 @@ body {
     font-size: 12px;
     color: var(--text-secondary);
     font-weight: 500;
+
+    display: flex;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    color: white;
+    visibility: visible !important;
 }
 
 /* Loading */
@@ -292,6 +303,15 @@ body {
     border-radius: 16px;
     box-shadow: var(--shadow);
     margin-bottom: 30px;
+}
+
+.loading h2 {
+    color: #EBFF00;
+    font-size: 22px;
+    margin-top: 20px;
+    transition: opacity 0.3s ease;
+    min-height: 32px;
+    font-weight: 500;
 }
 
 .spinner {
@@ -528,12 +548,14 @@ body {
 
 /* Error Message */
 .error-message {
-    background: white;
+    background: rgba(0, 0, 60, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--danger-color);
     border-radius: 16px;
     padding: 40px;
     text-align: center;
-    box-shadow: var(--shadow);
-    border-left: 5px solid var(--danger-color);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    color: var(--text-primary) !important;
 }
 
 .error-message i {
@@ -543,13 +565,15 @@ body {
 }
 
 .error-message h3 {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .error-message p {
-    color: var(--text-secondary);
+    color: var(--text-primary) !important;
     margin-bottom: 25px;
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -645,4 +669,41 @@ body {
     .action-buttons .btn {
         width: 100%;
     }
+    
+    /* States grid mobile adjustments */
+    .states-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .state-badge {
+        flex: 0 0 100px;
+        min-width: 100px;
+        padding: 10px;
+    }
+    
+    .state-badge img {
+        width: 35px;
+        height: 25px;
+    }
+    
+    .state-badge span {
+        font-size: 11px;
+    }
+}
+/* Upload area error state */
+.upload-area.error {
+    background: rgba(255, 0, 0, 0.05);
+    border-color: var(--danger-color) !important;
+    animation: shake 0.5s;
+}
+
+.upload-area.error .upload-icon {
+    color: var(--danger-color);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
 }

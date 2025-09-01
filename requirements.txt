@@ -4,3 +4,10 @@ Flask==3.0.0
 Werkzeug==3.0.1
 gunicorn==21.2.0
 serverless-wsgi==3.0.3
+pytesseract==0.3.10
+Pillow==10.1.0
+httpx==0.24.1
+httpcore==0.17.3
+anthropic==0.39.0
+python-dotenv==1.0.0
+pypdfium2==4.30.0

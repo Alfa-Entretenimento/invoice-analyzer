@@ -58,3 +58,6 @@ htmlcov/
 # PDF files (sensitive data)
 *.pdf
 notas/
+
+# Backup folder with old versions
+backup/

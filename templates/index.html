@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfa Entertainment - Analisador de Notas Fiscais</title>
+    <title>Alfa Entretenimento - Analisador de Notas Fiscais</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,10 +20,10 @@
         <header class="header">
             <div class="header-content">
                 <div class="logo">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzgiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMzggNTAiPgogIDxwYXRoIGZpbGw9IiNFQkZGMDAiIGQ9Ik0xMzYuMTEyIDI1LjM4NGExLjkgMS45IDAgMCAwLTEuMzM3LjU1IDEuODc1IDEuODc1IDAgMCAwIDAgMi42NTggMS44OTggMS44OTggMCAwIDAgMi42NjguMDAyIDEuODMyIDEuODMyIDAgMCAwIC41NTEtMS4zMzFjMC0uNDk3LS4xOTgtLjk3NC0uNTUxLTEuMzI2YTEuODkzIDEuODkzIDAgMCAwLTEuMzMxLS41NTNabS45NjUgMi44NDNhMS4zNiAxLjM2IDAgMCAxLS45NjUuNCAxLjM3IDEuMzcgMCAwIDEtLjk2Ny0uMzk5IDEuMzU2IDEuMzU2IDAgMCAxIC45NjctMi4zMiAxLjM3NSAxLjM3NSAwIDAgMSAxLjI1OC44NDIgMS4zNTkgMS4zNTkgMCAwIDEtLjI5MyAxLjQ4di0uMDAzWm0tLjEzNy0xLjM0YzAtLjMwOC0uMjI5LS41LS42MzEtLjVoLS45ODV2MS43MDNoLjQ3OHYtLjZoLjQzNWMuMTIgMCAuMTcyLjA1Ny4xNzIuMTg1di40aC40ODdjMC0uMTIgMC0uMjYtLjAyLS40YS4zMy4zMyAwIDAgMC0uMjIxLS4zNTYuNDQ0LjQ0NCAwIDAgMCAuMjg1LS40MzJabS0uNjk1LjI2OGgtLjQ0M3YtLjQzMmguNDM1YS4yMTMuMjEzIDAgMCAxIC4yNi4yOTcuMjE2LjIxNiAwIDAgMS0uMjYuMTAzbC4wMDguMDMyWk02My4xNyAzMi43NzNoLS44MDNjLTIuNzUxIDAtNi40NjMtMS44NjQtNi40NjMtNS40MVY4LjQwNGEuNTc0LjU3NCAwIDAgMC0uNTg0LS41OEg0NC44MTJhLjU4Mi41ODIgMCAwIDAtLjU0LjM1OC41NzQuNTc0IDAgMCAwLS4wNDQuMjIydjE5Ljg2M2MwIDcuODMyIDcuMTQ3IDEyLjkzIDE1LjkzIDEyLjkzaDMuMDEzYS41ODUuNTg1IDAgMCAwIC41ODMtLjU4di03LjI2NWEuNTc4LjU3OCAwIDAgMC0uNTgzLS41OFptMjcuMjQ3LTEwLjQ0OGgtOS4yM2MwLTMuMjM0IDEuNDQ4LTcuNDQgMTIuMjAyLTYuMjQ5YS40MDMuNDAzIDAgMCAwIC40NTgtLjRWOC4zMzJhLjU3OC41NzggMCAwIDAtLjUxOS0uNThjLTUuNjgyLS41ODQtMTEuOTk2LS4zMDQtMTYuNzg2IDIuMDkxLTQuNTM3IDIuMjctNy4wMyA1Ljk5Ny03LjAzIDEwLjkxOXYxOS44NTVhLjU3OC41NzggMCAwIDAgLjU4My41OGgxMC41MDlhLjU4NS41ODUgMCAwIDAgLjU4My0uNTh2LTExLjM0aDUuNjY2YS41OS41OSAwIDAgMCAuNTIzLS4zMjNsMy4yMTgtNi4zNjVhLjE3Ni4xNzYgMCAwIDAtLjE3Ny0uMjY0Wm0tNTQuNjkxIDUuMDU0YTE4LjA3OSAxOC4wNzkgMCAwIDAtNC41MTYtMy41OThjMS42MDguMzI1IDMuMTkuNzY3IDQuNzMzIDEuMzIzdi0uNzY4YzAtNS4yOTctMi42NDYtOS44ODctNy40NTYtMTIuOTMtMy4yMTctMi4wNDMtOC40NzQtNC4wNS0xNi40NjUtMy44NzhhLjUzNi41MzYgMCAwIDAtLjUxNS41MjR2Ny4zMDVhLjUyMi41MjIgMCAwIDAgLjUyNy41MjNjOC43OC4wNDggMTEuNTk1IDMuODk1IDEyLjI4NiA1LjI5YTMyLjM1MiAzMi4zNTIgMCAwIDAtNi45My0uNzY0Yy00LjE5OCAwLTcuNTU2LjUxMi0xMC4yNSAxLjU2OEMyLjUzNSAyMy43NiAwIDI3LjA0NyAwIDMxLjIyYzAgNC4wOTggMi43MzUgNy40IDcuNTA1IDkuMDZhMjUuMjE1IDI1LjIxNSAwIDAgMCA3Ljg5OCAxLjJjNS40NzggMCAxMC4wNTUtMS4yMjggMTMuNDk3LTMuNDc5LjA0LjkxMS4wMTIgMS44MjQtLjA4NCAyLjczYS40LjQgMCAwIDAgLjQwMi40NDRoMTAuNTY1YS41ODcuNTg3IDAgMCAwIC41NDEtLjM2My41NzcuNTc3IDAgMCAwIC4wNDItLjIyNGMtLjA5Mi01LjU5OC0xLjU1Ni05LjgwOC00LjY0NS0xMy4yM2wuMDA0LjAyWm0tMTQuMzkgNC4xMWMtMy44MDggMi4wMzUtOS44MTMgMS40NjctOS44MTMtLjM0OCAwLTEuMjUxIDIuNjA2LTEuODYzIDUuNDc4LTEuODYzIDUuODQ3IDAgOC43MjcgMi4xMzUgOS42NTIgMy4xNDNhNDguNTc2IDQ4LjU3NiAwIDAgMC01LjMxNy0uOTMyWm0xMDguMjM4LTQuMTFhMTguMDkgMTguMDkgMCAwIDAtNC41MTctMy41OTggMzYuOTEgMzYuOTEgMCAwIDEgNC43NDYgMS4zMTV2LS43NjhjMC01LjI5Ny0yLjY1LTkuODg3LTcuNDU2LTEyLjkzLTMuNzI5LTIuMzU4LTEwLjEzNS00LjY3My0yMC4zNTgtMy42MzhhLjU4Ni41ODYgMCAwIDAtLjUyMy41NzJ2Ny4zNTdhLjM4Ni4zODYgMCAwIDAgLjAzNS4xNjcuNDAyLjQwMiAwIDAgMCAuNDIzLjIzM2MxMS45NDUtMS4yNzYgMTUuNDU2IDMuNDk0IDE2LjI0IDUuMDhhMzIuMzE3IDMyLjMxNyAwIDAgMC02LjkyNS0uNzYzYy00LjE5OSAwLTcuNTU3LjUxMi0xMC4yNjQgMS41NjgtNC41OTcgMS43ODctNy4xMjYgNS4wNzMtNy4xMjYgOS4yNDcgMCA0LjA5OCAyLjczNCA3LjQgNy41MDQgOS4wNmEyNS4yMTcgMjUuMjE3IDAgMCAwIDcuODk5IDEuMmM1LjQ3NyAwIDEwLjA1NC0xLjIyOCAxMy40OTctMy40NzkuMDQuOTEuMDEyIDEuODIxLS4wODUgMi43MjdhLjM5Ny4zOTcgMCAwIDAgLjIzNy40MTMuNC40IDAgMCAwIC4xNjUuMDM0aDEwLjU2MmEuNTg4LjU4OCAwIDAgMCAuNTk5LS41NjdjLS4xMDUtNS41OTgtMS41NjUtOS44MDgtNC42NTMtMTMuMjNabS0xNC4zOSA0LjExYy0zLjgwOSAyLjAzNS05LjgxMyAxLjQ2Ny05LjgxMy0uMzQ4IDAtMS4yNTEgMi42MDYtMS44NjMgNS40NzctMS44NjMgNS44NDggMCA4LjcyNCAyLjEzNSA5LjY1MyAzLjE0M2E0OC41OTkgNDguNTk5IDAgMCAwLTUuMzE3LS45MzJaIi8+Cjwvc3ZnPgo=" alt="Alfa Entertainment" style="height: 50px;">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzgiIGhlaWdodD0iNTAiIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMzggNTAiPgogIDxwYXRoIGZpbGw9IiNFQkZGMDAiIGQ9Ik0xMzYuMTEyIDI1LjM4NGExLjkgMS45IDAgMCAwLTEuMzM3LjU1IDEuODc1IDEuODc1IDAgMCAwIDAgMi42NTggMS44OTggMS44OTggMCAwIDAgMi42NjguMDAyIDEuODMyIDEuODMyIDAgMCAwIC41NTEtMS4zMzFjMC0uNDk3LS4xOTgtLjk3NC0uNTUxLTEuMzI2YTEuODkzIDEuODkzIDAgMCAwLTEuMzMxLS41NTNabS45NjUgMi44NDNhMS4zNiAxLjM2IDAgMCAxLS45NjUuNCAxLjM3IDEuMzcgMCAwIDEtLjk2Ny0uMzk5IDEuMzU2IDEuMzU2IDAgMCAxIC45NjctMi4zMiAxLjM3NSAxLjM3NSAwIDAgMSAxLjI1OC44NDIgMS4zNTkgMS4zNTkgMCAwIDEtLjI5MyAxLjQ4di0uMDAzWm0tLjEzNy0xLjM0YzAtLjMwOC0uMjI5LS41LS42MzEtLjVoLS45ODV2MS43MDNoLjQ3OHYtLjZoLjQzNWMuMTIgMCAuMTcyLjA1Ny4xNzIuMTg1di40aC40ODdjMC0uMTIgMC0uMjYtLjAyLS40YS4zMy4zMyAwIDAgMC0uMjIxLS4zNTYuNDQ0LjQ0NCAwIDAgMCAuMjg1LS40MzJabS0uNjk1LjI2OGgtLjQ0M3YtLjQzMmguNDM1YS4yMTMuMjEzIDAgMCAxIC4yNi4yOTcuMjE2LjIxNiAwIDAgMS0uMjYuMTAzbC4wMDguMDMyWk02My4xNyAzMi43NzNoLS44MDNjLTIuNzUxIDAtNi40NjMtMS44NjQtNi40NjMtNS40MVY4LjQwNGEuNTc0LjU3NCAwIDAgMC0uNTg0LS41OEg0NC44MTJhLjU4Mi41ODIgMCAwIDAtLjU0LjM1OC41NzQuNTc0IDAgMCAwLS4wNDQuMjIydjE5Ljg2M2MwIDcuODMyIDcuMTQ3IDEyLjkzIDE1LjkzIDEyLjkzaDMuMDEzYS41ODUuNTg1IDAgMCAwIC41ODMtLjU4di03LjI2NWEuNTc4LjU3OCAwIDAgMC0uNTgzLS41OFptMjcuMjQ3LTEwLjQ0OGgtOS4yM2MwLTMuMjM0IDEuNDQ4LTcuNDQgMTIuMjAyLTYuMjQ5YS40MDMuNDAzIDAgMCAwIC40NTgtLjRWOC4zMzJhLjU3OC41NzggMCAwIDAtLjUxOS0uNThjLTUuNjgyLS41ODQtMTEuOTk2LS4zMDQtMTYuNzg2IDIuMDkxLTQuNTM3IDIuMjctNy4wMyA1Ljk5Ny03LjAzIDEwLjkxOXYxOS44NTVhLjU3OC41NzggMCAwIDAgLjU4My41OGgxMC41MDlhLjU4NS41ODUgMCAwIDAgLjU4My0uNTh2LTExLjM0aDUuNjY2YS41OS41OSAwIDAgMCAuNTIzLS4zMjNsMy4yMTgtNi4zNjVhLjE3Ni4xNzYgMCAwIDAtLjE3Ny0uMjY0Wm0tNTQuNjkxIDUuMDU0YTE4LjA3OSAxOC4wNzkgMCAwIDAtNC41MTYtMy41OThjMS42MDguMzI1IDMuMTkuNzY3IDQuNzMzIDEuMzIzdi0uNzY4YzAtNS4yOTctMi42NDYtOS44ODctNy40NTYtMTIuOTMtMy4yMTctMi4wNDMtOC40NzQtNC4wNS0xNi40NjUtMy44NzhhLjUzNi41MzYgMCAwIDAtLjUxNS41MjR2Ny4zMDVhLjUyMi41MjIgMCAwIDAgLjUyNy41MjNjOC43OC4wNDggMTEuNTk1IDMuODk1IDEyLjI4NiA1LjI5YTMyLjM1MiAzMi4zNTIgMCAwIDAtNi45My0uNzY0Yy00LjE5OCAwLTcuNTU2LjUxMi0xMC4yNSAxLjU2OEMyLjUzNSAyMy43NiAwIDI3LjA0NyAwIDMxLjIyYzAgNC4wOTggMi43MzUgNy40IDcuNTA1IDkuMDZhMjUuMjE1IDI1LjIxNSAwIDAgMCA3Ljg5OCAxLjJjNS40NzggMCAxMC4wNTUtMS4yMjggMTMuNDk3LTMuNDc5LjA0LjkxMS4wMTIgMS44MjQtLjA4NCAyLjczYS40LjQgMCAwIDAgLjQwMi40NDRoMTAuNTY1YS41ODcuNTg3IDAgMCAwIC41NDEtLjM2My41NzcuNTc3IDAgMCAwIC4wNDItLjIyNGMtLjA5Mi01LjU5OC0xLjU1Ni05LjgwOC00LjY0NS0xMy4yM2wuMDA0LjAyWm0tMTQuMzkgNC4xMWMtMy44MDggMi4wMzUtOS44MTMgMS40NjctOS44MTMtLjM0OCAwLTEuMjUxIDIuNjA2LTEuODYzIDUuNDc4LTEuODYzIDUuODQ3IDAgOC43MjcgMi4xMzUgOS42NTIgMy4xNDNhNDguNTc2IDQ4LjU3NiAwIDAgMC01LjMxNy0uOTMyWm0xMDguMjM4LTQuMTFhMTguMDkgMTguMDkgMCAwIDAtNC41MTctMy41OTggMzYuOTEgMzYuOTEgMCAwIDEgNC43NDYgMS4zMTV2LS43NjhjMC01LjI5Ny0yLjY1LTkuODg3LTcuNDU2LTEyLjkzLTMuNzI5LTIuMzU4LTEwLjEzNS00LjY3My0yMC4zNTgtMy42MzhhLjU4Ni41ODYgMCAwIDAtLjUyMy41NzJ2Ny4zNTdhLjM4Ni4zODYgMCAwIDAgLjAzNS4xNjcuNDAyLjQwMiAwIDAgMCAuNDIzLjIzM2MxMS45NDUtMS4yNzYgMTUuNDU2IDMuNDk0IDE2LjI0IDUuMDhhMzIuMzE3IDMyLjMxNyAwIDAgMC02LjkyNS0uNzYzYy00LjE5OSAwLTcuNTU3LjUxMi0xMC4yNjQgMS41NjgtNC41OTcgMS43ODctNy4xMjYgNS4wNzMtNy4xMjYgOS4yNDcgMCA0LjA5OCAyLjczNCA3LjQgNy41MDQgOS4wNmEyNS4yMTcgMjUuMjE3IDAgMCAwIDcuODk5IDEuMmM1LjQ3NyAwIDEwLjA1NC0xLjIyOCAxMy40OTctMy40NzkuMDQuOTEuMDEyIDEuODIxLS4wODUgMi43MjdhLjM5Ny4zOTcgMCAwIDAgLjIzNy40MTMuNC40IDAgMCAwIC4xNjUuMDM0aDEwLjU2MmEuNTg4LjU4OCAwIDAgMCAuNTk5LS41NjdjLS4xMDUtNS41OTgtMS41NjUtOS44MDgtNC42NTMtMTMuMjNabS0xNC4zOSA0LjExYy0zLjgwOSAyLjAzNS05LjgxMyAxLjQ2Ny05LjgxMy0uMzQ4IDAtMS4yNTEgMi42MDYtMS44NjMgNS40NzctMS44NjMgNS44NDggMCA4LjcyNCAyLjEzNSA5LjY1MyAzLjE0M2E0OC41OTkgNDguNTk5IDAgMCAwLTUuMzE3LS45MzJaIi8+Cjwvc3ZnPgo=" alt="Alfa Entretenimento" style="height: 50px;">
                     <h1>Analisador de Notas Fiscais</h1>
                 </div>
-                <p class="subtitle">Sistema de Análise de Notas Fiscais de Serviço - Alfa Entertainment</p>
+                <p class="subtitle">Sistema de Análise de Notas Fiscais de Serviço - Alfa Entretenimento</p>
             </div>
         </header>
 
@@ -53,39 +53,115 @@
 
             <!-- Estados Suportados -->
             <div class="supported-states">
-                <h3>Estados Suportados</h3>
+                <h3>Estados Brasileiros Suportados</h3>
                 <div class="states-grid">
-                    <div class="state-badge" data-state="SP">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="SP">
-                        <span>São Paulo</span>
+                    <div class="state-badge" data-state="AC">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Bandeira_do_Acre.svg" alt="AC">
+                        <span>Acre</span>
                     </div>
-                    <div class="state-badge" data-state="RJ">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg" alt="RJ">
-                        <span>Rio de Janeiro</span>
+                    <div class="state-badge" data-state="AL">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bandeira_de_Alagoas.svg" alt="AL">
+                        <span>Alagoas</span>
                     </div>
-                    <div class="state-badge" data-state="MG">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg" alt="MG">
-                        <span>Minas Gerais</span>
+                    <div class="state-badge" data-state="AP">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Bandeira_do_Amap%C3%A1.svg" alt="AP">
+                        <span>Amapá</span>
+                    </div>
+                    <div class="state-badge" data-state="AM">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Bandeira_do_Amazonas.svg" alt="AM">
+                        <span>Amazonas</span>
                     </div>
                     <div class="state-badge" data-state="BA">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Bandeira_da_Bahia.svg" alt="BA">
                         <span>Bahia</span>
                     </div>
+                    <div class="state-badge" data-state="CE">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Bandeira_do_Cear%C3%A1.svg" alt="CE">
+                        <span>Ceará</span>
+                    </div>
+                    <div class="state-badge" data-state="DF">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29.svg" alt="DF">
+                        <span>Distrito Federal</span>
+                    </div>
+                    <div class="state-badge" data-state="ES">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Bandeira_do_Esp%C3%ADrito_Santo.svg" alt="ES">
+                        <span>Espírito Santo</span>
+                    </div>
+                    <div class="state-badge" data-state="GO">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_Goi%C3%A1s.svg" alt="GO">
+                        <span>Goiás</span>
+                    </div>
+                    <div class="state-badge" data-state="MA">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Bandeira_do_Maranh%C3%A3o.svg" alt="MA">
+                        <span>Maranhão</span>
+                    </div>
+                    <div class="state-badge" data-state="MT">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Bandeira_de_Mato_Grosso.svg" alt="MT">
+                        <span>Mato Grosso</span>
+                    </div>
+                    <div class="state-badge" data-state="MS">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Bandeira_de_Mato_Grosso_do_Sul.svg" alt="MS">
+                        <span>Mato Grosso do Sul</span>
+                    </div>
+                    <div class="state-badge" data-state="MG">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg" alt="MG">
+                        <span>Minas Gerais</span>
+                    </div>
+                    <div class="state-badge" data-state="PA">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Bandeira_do_Par%C3%A1.svg" alt="PA">
+                        <span>Pará</span>
+                    </div>
+                    <div class="state-badge" data-state="PB">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Bandeira_da_Para%C3%ADba.svg" alt="PB">
+                        <span>Paraíba</span>
+                    </div>
                     <div class="state-badge" data-state="PR">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Bandeira_do_Paran%C3%A1.svg" alt="PR">
                         <span>Paraná</span>
+                    </div>
+                    <div class="state-badge" data-state="PE">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Bandeira_de_Pernambuco.svg" alt="PE">
+                        <span>Pernambuco</span>
+                    </div>
+                    <div class="state-badge" data-state="PI">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Bandeira_do_Piau%C3%AD.svg" alt="PI">
+                        <span>Piauí</span>
+                    </div>
+                    <div class="state-badge" data-state="RJ">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bandeira_do_estado_do_Rio_de_Janeiro.svg" alt="RJ">
+                        <span>Rio de Janeiro</span>
+                    </div>
+                    <div class="state-badge" data-state="RN">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Bandeira_do_Rio_Grande_do_Norte.svg" alt="RN">
+                        <span>Rio Grande do Norte</span>
                     </div>
                     <div class="state-badge" data-state="RS">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Bandeira_do_Rio_Grande_do_Sul.svg" alt="RS">
                         <span>Rio Grande do Sul</span>
                     </div>
+                    <div class="state-badge" data-state="RO">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Bandeira_de_Rond%C3%B4nia.svg" alt="RO">
+                        <span>Rondônia</span>
+                    </div>
+                    <div class="state-badge" data-state="RR">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Bandeira_de_Roraima.svg" alt="RR">
+                        <span>Roraima</span>
+                    </div>
                     <div class="state-badge" data-state="SC">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Bandeira_de_Santa_Catarina.svg" alt="SC">
                         <span>Santa Catarina</span>
                     </div>
-                    <div class="state-badge" data-state="DF">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Bandeira_do_Distrito_Federal_%28Brasil%29.svg" alt="DF">
-                        <span>Distrito Federal</span>
+                    <div class="state-badge" data-state="SP">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="SP">
+                        <span>São Paulo</span>
+                    </div>
+                    <div class="state-badge" data-state="SE">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Bandeira_de_Sergipe.svg" alt="SE">
+                        <span>Sergipe</span>
+                    </div>
+                    <div class="state-badge" data-state="TO">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Bandeira_do_Tocantins.svg" alt="TO">
+                        <span>Tocantins</span>
                     </div>
                 </div>
             </div>
@@ -94,7 +170,7 @@
         <!-- Loading Spinner -->
         <div class="loading" id="loading" style="display: none;">
             <div class="spinner"></div>
-            <p>Analisando nota fiscal em processamento...</p>
+            <h2>Analisando nota fiscal em processamento...</h2>
         </div>
 
         <!-- Results Section -->
@@ -186,7 +262,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 Alfa Entertainment S.A. | Sistema de Análise de Notas Fiscais</p>
+        <p>© 2025 Alfa Entretenimento S.A. | Sistema de Análise de Notas Fiscais</p>
         <p class="footer-tech">
             <i class="fab fa-python"></i> Python
             <span class="separator">•</span>
